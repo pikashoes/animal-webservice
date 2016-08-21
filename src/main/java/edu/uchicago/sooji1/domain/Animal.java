@@ -1,15 +1,12 @@
 package edu.uchicago.sooji1.domain;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
- * Created by pikashoes on 8/17/16.
+ * Animal - cat, dog, rabbit
  */
 
 @Entity
-public class Make
+public class Animal
 {
     @Id
     @GeneratedValue
@@ -17,12 +14,12 @@ public class Make
 
     private String name;
 
-    public Make(String name)
+    public Animal(String name)
     {
         this.name = name;
     }
 
-    public Make()
+    public Animal()
     {
     }
 

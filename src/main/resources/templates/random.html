@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--Page for "/random"-->
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head lang="en">
+    <title>Welcome</title>
+    <meta http-equiv="Content-Type" content="text/html; charset-UTF-8"/>
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.4/css/boostrap.min.css}"
+          rel="stylesheet" media="screen" />
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+    <link href="../static/css/style.css"
+          th:href="@{css/style.css}" rel="stylesheet" media="screen"/>
+</head>
+
+<!--NAVIGATION BAR-->
+<nav class = "navbar navbar-inverse" role = "navigation">
+    <div class="container">
+        <div>
+            <ul class = "nav navbar-nav">
+                <li><a href = "/ ">Home</a></li>
+                <li><a href = "list">List of Animals</a></li>
+                <li class = "active"><a href = "random">Random Cat Generator</a></li>
+            </ul>
+        </div>
+    </div> <!-- /.container-fluid -->
+</nav>
+<!--END NAVIGATION BAR-->
+
+<body>
+<div class="container">
+    <h1> Here is a random cat for you:</h1>
+
+    <!--This is API from www.thecatapi.com-->
+    <a href="http://thecatapi.com">
+        <img src="http://thecatapi.com/api/images/get?format=src" alt="Cat Image"/>
+    </a>
+</div>
+</body>
+
+</html>
+
+

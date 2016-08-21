@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--Taken directly from the SportsVans demo.-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset-UTF-8"/>
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.4/css/boostrap.min.css}"
+          rel="stylesheet" media="screen" />
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+    <link href="../static/css/style.css"
+          th:href="@{css/style.css}" rel="stylesheet" media="screen"/>
+</head>
+
+<body>
+
+<div class="container">
+    <div th:fragment="header">
+
+        <div class="jumbotron">
+            <div class="row test-center">
+                <div class="">
+                    <h1>animals = love</h1>
+                </div>
+            </div>
+            <div class="row test-center">
+                <img src="../../static/NewBannerBOOTS_2.png" width="600"
+                     th:src="@{http://www.purtonvets.co.uk/communities/8/004/011/970/238//images/4600405359_402x273.png}"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--Page for home page "/"-->
+    <head lang="en">
+        <title>Welcome</title>
+        <meta http-equiv="Content-Type" content="text/html; charset-UTF-8"/>
+
+        <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+              th:href="@{/webjars/bootstrap/3.3.4/css/boostrap.min.css}"
+              rel="stylesheet" media="screen" />
+        <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+                th:src="@{webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+        <link href="../static/css/style.css"
+              th:href="@{css/style.css}" rel="stylesheet" media="screen"/>
+    </head>
+
+    <!--NAVIGATION BAR-->
+    <nav class = "navbar navbar-inverse" role = "navigation">
+        <div class="container">
+            <div>
+                <ul class = "nav navbar-nav">
+                    <li class = "active" ><a href = "/ ">Home</a></li>
+                    <li><a href = "list">List of Animals</a></li>
+                    <li><a href = "random">Random Cat Generator</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--END NAVIGATION BAR-->
+
+    <body>
+        <div class="container">
+            <div class="center">
+                <img src="../static/images/garfield.png" width="600"
+                     th:src="@{images/garfield.png}"/>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="page-header">
+                 <h1>ANIMALS ARE AWESOME</h1>
+            </div>
+            <p>The Java final project instructions told me to be creative.</p>
+            <p>What is more creative than adorable animals and funny cartoons??</p>
+        </div>
+    </body>
+
+</html>

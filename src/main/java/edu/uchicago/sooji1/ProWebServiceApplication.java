@@ -1,9 +1,9 @@
 package edu.uchicago.sooji1;
 
-import edu.uchicago.sooji1.domain.Make;
-import edu.uchicago.sooji1.domain.Van;
-import edu.uchicago.sooji1.repository.MakeRepository;
-import edu.uchicago.sooji1.repository.VanRepository;
+import edu.uchicago.sooji1.domain.Animal;
+import edu.uchicago.sooji1.domain.Breed;
+import edu.uchicago.sooji1.repository.AnimalRepository;
+import edu.uchicago.sooji1.repository.BreedRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -15,10 +15,10 @@ import java.util.Arrays;
 public class ProWebServiceApplication implements CommandLineRunner
 {
 	@Autowired
-	private VanRepository vanRepository;
+	private AnimalRepository animalRepository;
 
 	@Autowired
-	private MakeRepository makeRepository;
+	private BreedRepository breedRepository;
 
 	public static void main(String[] args)
 	{
@@ -27,20 +27,25 @@ public class ProWebServiceApplication implements CommandLineRunner
 
 	@Override
 	public void run(String... strings) throws Exception{
-		Make[] makes = new Make[3];
-		makes[0] = new Make("BMW");
-		makes[1] = new Make("Audi");
-		makes[2] = new Make("Mercedes");
+		Animal[] animals = new Animal[3];
+		animals[0] = new Animal("Cat");
+		animals[1] = new Animal("Dog");
+		animals[2] = new Animal("Rabbit");
 
-		makeRepository.save(Arrays.asList(makes));
+		animalRepository.save(Arrays.asList(animals));
 
-		Van[] vans = new Van[5];
-		vans[0] = new Van("RB Low top", "151 inch wheel base with Diesel", makes[2], "http://sportsmobile.com/wp-content/uploads/2015/01/red-sprinter-penthouse-2.jpg");
-		vans[1] = new Van("A3", "Best car ever", makes[1], "http://www.parkwayspecialistcars.co.uk/uploads/product/zoom_AUDI_A3_2.0_TDI_170_BHP_QUATTRO_BLACK_EDITION_5Dr.jpg");
-		vans[2] = new Van("R8", "GET THIS", makes[1], "http://i.imgur.com/ZEXzBeF.jpg");
-		vans[3] = new Van("3-series", "SF cars", makes[0], "http://st.motortrend.com/uploads/sites/5/2015/05/2016-BMW-3-Series-Wagon-front-three-quarter-in-motion.jpg");
-		vans[4] = new Van("5-series", "Old people cars", makes[0], "https://upload.wikimedia.org/wikipedia/commons/c/cd/BMW_535i_GT_(F07)_front-2_20101016.jpg");
+		/**
+		 * Each animal has many breeds. A breed cannot have many animals for the purposes of this assignment (and I think in
+		 * most cases).
+		 */
+		Breed[] breeds = new Breed[5];
+		breeds[0] = new Breed("Siamese", "Cats with light-colored coats set off with black mask, ears, paws, and tail native to Thailand.", animals[0], "http://www.golfian.com/wp-content/uploads/2016/07/Adorable-Siamese-Cat-600x600.jpg");
+		breeds[1] = new Breed("Maine Coon", "Largest domestic breed of cat.", animals[0], "http://stockfresh.com/files/c/cynoclub/m/16/4697900_stock-photo-maine-coon-kitten.jpg");
+		breeds[2] = new Breed("Pug", "The Pug is a breed of dog with a wrinkly, short-muzzled face and curled tail. Originates from China.", animals[1], "http://www.dogstad.com/wp-content/uploads/2013/06/dogstad_0045_34238701-pug-dog-isolated-on-white-background-Copy-Copy.jpg");
+		breeds[3] = new Breed("Yorkshire Terrier", "The Yorkshire Terrier is a small dog breed of terrier type, developed during the 19th century in Yorkshire, England, to catch rats in clothing mills.", animals[1], "http://img-aws.ehowcdn.com/600x600p/photos.demandstudios.com/getty/article/178/127/87788133.jpg");
+		breeds[4] = new Breed("Holland Lop", "The Holland Lop is a breed of rabbit originating in the Netherlands.", animals[2], "http://img-aws.ehowcdn.com/600x600p/photos.demandstudios.com/getty/article/114/105/skd187613sdc.jpg");
 
-		vanRepository.save(Arrays.asList(vans));
+		breedRepository.save(Arrays.asList(breeds));
 	}
+
 }

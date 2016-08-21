@@ -6,12 +6,13 @@ import javax.persistence.*;
 import java.util.Date;
 
 /**
- * Created by pikashoes on 8/17/16.
+ * Animal Repository
  */
 
 @Entity
-public class Van
+public class Breed
 {
+
     @Id
     @GeneratedValue
     private Long id;
@@ -26,20 +27,20 @@ public class Van
     private Date createTime;
 
     @ManyToOne
-    private Make make;
+    private Animal animal;
 
     private String imgUrl;
 
-    public Van(String name, String desc, Make make, String imgUrl)
+    public Breed(String name, String desc, Animal animal, String imgUrl)
     {
         this.name = name;
         this.desc = desc;
-        this.make = make;
+        this.animal = animal;
         this.imgUrl = imgUrl;
         createTime = new Date();
     }
 
-    public Van()
+    public Breed()
     {
     }
 
@@ -78,14 +79,14 @@ public class Van
         return createTime;
     }
 
-    public Make getMake()
+    public Animal getAnimal()
     {
-        return make;
+        return animal;
     }
 
-    public void setMake(Make make)
+    public void setAnimal(Animal animal)
     {
-        this.make = make;
+        this.animal = animal;
     }
 
     public String getImgUrl()
@@ -101,13 +102,14 @@ public class Van
     @Override
     public String toString()
     {
-        return "Van{" +
+        return "Breed{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", desc='" + desc + '\'' +
                 ", createTime=" + createTime +
-                ", make=" + make +
+                ", animal=" + animal +
                 ", imgUrl='" + imgUrl + '\'' +
                 '}';
     }
+
 }

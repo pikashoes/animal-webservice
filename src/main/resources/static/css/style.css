@@ -1,0 +1,100 @@
+/*Centering image*/
+img
+{
+    top: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+/*Centers header, changes font and color*/
+h1
+{
+    text-align: center;
+    text-transform: uppercase;
+    color: #4CAF50;
+    font-family:Tahoma;
+}
+
+h2
+{
+    text-align: center;
+    text-transform: uppercase;
+    color: #81af7e;
+    font-family:Tahoma;
+}
+
+/*Centers the paragraph text*/
+p
+{
+    text-align: center;
+    font-family:Tahoma;
+}
+
+/*For the navigation bar*/
+/*Makes background color changed, removes bullets, fixes to top*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    /*position: fixed;*/
+    top: 0;
+    width: 100%;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/*Hover color change*/
+li a:hover {
+    background-color: #111;
+}
+
+/*Makes separate color for active tab*/
+.active {
+    background-color: #4CAF50;
+}
+
+/*This is for the table*/
+/*Inspiration from: http://www.w3schools.com/bootstrap/bootstrap_tables.asp*/
+#animals
+{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#animals td, #animals th
+{
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#animals tr:nth-child(even)
+{
+    background-color: #f2f2f2;
+}
+
+#animals tr:hover
+{
+    background-color: #ddd;
+}
+
+#animals th
+{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
